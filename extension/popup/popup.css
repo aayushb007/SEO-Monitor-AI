@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f5f5f5;
+  color: #2c3e50;
+}
+
+.container {
+  width: 300px;
+  padding: 16px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+}
+
+.status-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.analysis-container {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  color: #2c3e50;
+}
+
+.scores-section {
+  margin-bottom: 24px;
+}
+
+.score-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.score-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.score-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.score-value {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.score-bar {
+  height: 6px;
+  background-color: #e0e0e0;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.score-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #8BC34A);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.suggestions-section {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.suggestions-list {
+  margin-top: 16px;
+}
+
+.suggestions-list p {
+  color: #666;
+  font-size: 14px;
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add this to your popup.js to update scores and bars */
+#performance-score, #seo-score, #accessibility-score {
+  transition: color 0.3s ease;
+}
+
+/* Colors for different score ranges */
+.score-value.green { color: #4CAF50; }
+.score-value.yellow { color: #FFC107; }
+.score-value.red { color: #F44336; }
