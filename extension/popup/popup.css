@@ -156,3 +156,22 @@ h2 {
 .score-value.green { color: #4CAF50; }
 .score-value.yellow { color: #FFC107; }
 .score-value.red { color: #F44336; }
+
+.progress-bar {
+    height: 10px;
+    background: #ecf0f1;
+    margin: 5px 0;
+  }
+  .progress-fill {
+    height: 100%;
+    background: #3498db;
+  }
+  .score-card {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+  }
+  .score {
+    font-size: 24px;
+    font-weight: bold;
+  }

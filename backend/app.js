@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const openaiService = require('./services/openai');
 const pagespeedService = require('./services/pagespeed');
-
+const geminiService = require('./services/gemini');
 const app = express();
 app.use(cors());
 app.use(express.json({ limit: '10mb' }));
@@ -17,7 +17,7 @@ app.post('/api/analyze', async (req, res) => {
     const pagespeedData = await pagespeedService.getPageSpeedInsights(url);
     
     // Get AI suggestions
-    const aiSuggestions = await openaiService.getSEOSuggestions(html);
+    const aiSuggestions = await geminiService.getSEOSuggestions(html);
     
     res.json({
       success: true,

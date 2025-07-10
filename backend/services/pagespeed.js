@@ -20,7 +20,9 @@ const getPageSpeedInsights = async (url) => {
     if (!response.data.lighthouseResult) {
       throw new Error('No lighthouseResult in response');
     }
-
+  
+    console.log(response.data.lighthouseResult);
+    
     const result = {
       performance: response.data.lighthouseResult.categories?.performance?.score * 100 || 'N/A',
       seo: response.data.lighthouseResult.categories?.seo?.score * 100 || 'N/A',
